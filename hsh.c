@@ -1,20 +1,23 @@
 #include "hsh.h"
 
 /**
- * main - entry point
- * @argc: the argument count
- * @argv: the argument vector
+ * main - Entry point
+ * @argc: The argument count
+ * @argv: The argument vector
  *
- * Return: Always 0
+ * Return: 0 always on success
  */
 int main(int argc, char **argv)
 {
+	/*int var1 = 3;*/
+	/*int var2 = 4;*/
 	info_t *info = init_info(argc, argv);
 
 	signal(2, _sigint);
 
 	while (read_input(info))
 	{
+		/*while (var1 > var2;);*/
 		parse(info);
 		while ((info->tokens = pop_cmd(&(info->commands))))
 		{
@@ -23,6 +26,7 @@ int main(int argc, char **argv)
 		}
 		free(info->line);
 		info->line = NULL;
+		/*add(var1, var2);*/
 	}
 	if (info->interactive)
 		write(STDOUT_FILENO, "\n", 1);

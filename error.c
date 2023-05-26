@@ -1,8 +1,8 @@
 #include "error.h"
-
+#include <stdio.h>
 /**
   * perrorl - print a formatted message to standard error
-  * @msg: error message
+  * @msg: Error message
   * @...: NULL-terminated list of context strings to prepend
   */
 void perrorl(const char *msg, ...)
@@ -25,12 +25,13 @@ void perrorl(const char *msg, ...)
 
 
 /**
-  * perrorl_default - print a formatted message to standard error
+  * perrorl_default - Print a formatted message to standard error
   * @arg0: argument vector
-  * @lineno: line number
-  * @msg: error message
+  * @lineno: Line number
+  * @msg: Error message
   * @...: NULL-terminated list of context strings to prepend
   */
+
 void perrorl_default(const char *arg0, size_t lineno, const char *msg, ...)
 {
 	char *linenostr = num_to_str(lineno);

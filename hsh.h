@@ -1,21 +1,15 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-#include <stdbool.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <signal.h>
 #include <errno.h>
 #include <fcntl.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-#include "alias.h"
-#include "builtins.h"
-#include "command.h"
-#include "ctype.h"
-#include "dict.h"
-#include "env.h"
 #include "error.h"
 #include "info.h"
 #include "list.h"
@@ -24,6 +18,12 @@
 #include "string.h"
 #include "tokens.h"
 #include "types.h"
+#include "alias.h"
+#include "builtins.h"
+#include "command.h"
+#include "ctype.h"
+#include "dict.h"
+#include "env.h"
 
 extern char **environ;
 

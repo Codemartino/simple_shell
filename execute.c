@@ -1,10 +1,10 @@
 #include "hsh.h"
 
 /**
-  * execute - execute a command
+  * execute - Execute a command
   * @info: arguments passed
   *
-  * Return: status
+  * Return: Status
   */
 int execute(info_t *info)
 {
@@ -30,7 +30,7 @@ int execute(info_t *info)
 	}
 	if (info->exe)
 	{
-		perrorl_default(*info->argv, info->lineno, "Permission denied",
+		perrorl_default(*info->argv, info->lineno, "Access denied",
 				*info->tokens, NULL);
 		info->status = 126;
 	}
@@ -45,10 +45,10 @@ int execute(info_t *info)
 
 
 /**
- * _execute - fork and exec the current command
- * @info: shell information
+ * _execute - Fork and exec the current command
+ * @info: Shell information
  *
- * Return: exit status of the child process
+ * Return: Exit status child process
  */
 int _execute(info_t *info)
 {
@@ -77,7 +77,7 @@ int _execute(info_t *info)
 		exit(EXIT_FAILURE);
 		break;
 	case -1:
-		perrorl_default(*info->argv, info->lineno, "Cannot fork", NULL);
+		perrorl_default(*info->argv, info->lineno, "Can't fork", NULL);
 		info->status = 2;
 		break;
 	default:
